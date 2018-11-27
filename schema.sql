@@ -19,9 +19,9 @@ VALUES ("Nike Zoom", "Shoes", 74.99, 450),
   ("Adidas Cloudfoam", "Shoes", 59.99, 200),
   ("Adidas NMD-R1", "Shoes", 140.00, 15),
   ("Oakley razor", "Apparel", 175.00, 23),
-  ("Worn Denim Jeans", "Apparel", 54.25, 35),
+  ("Selvedge Denim Jeans", "Apparel", 199.00, 35),
   ("Survival Towel", "Necessities", 42.42, 42),
   ("Bill and Ted's Excellent Adventure", "Films", 15.00, 25),
   ("Mad Max: Fury Road", "Films", 25.50, 57),
-  ("Monopoly", "Board Games", 30.50, 35),
-  ("Yahtzee", "Board Games", 19.95, 23);
+  ("Monopoly", "Games", 30.50, 35),
+  ("UNO", "Games", 11.95, 23);

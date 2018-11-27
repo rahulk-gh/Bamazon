@@ -2,6 +2,7 @@
 var mysql = require("mysql");
 var inquirer = require("inquirer");
 require("console.table");
+//Correct the .env functionality - this does not work
 var private = require("./private");
 
 // Initializes the connection variable to sync with a MySQL database
@@ -15,7 +16,7 @@ var connection = mysql.createConnection({
   user: "root",
 
   // Your password
-  password: private,
+  password: "",
   database: "bamazon"
 });
 
@@ -68,7 +69,8 @@ function promptCustomerForItem(inventory) {
       }
       else {
         // Otherwise let them know the item is not in the inventory, re-run loadProducts
-        console.log("\nThat item is not in the inventory.");
+        console.log("\nHmm..That is not in the inventory. Please try again.");
+        console.log("\n");
         loadProducts();
       }
     });
@@ -94,7 +96,8 @@ function promptCustomerForQuantity(product) {
 
       // If there isn't enough of the chosen product and quantity, let the user know and re-run loadProducts
       if (quantity > product.stock_quantity) {
-        console.log("\nInsufficient quantity!");
+        console.log("\nThats too much..Sorry Insufficient quantity!");
+        console.log("\n");
         loadProducts();
       }
       else {
@@ -112,6 +115,7 @@ function makePurchase(product, quantity) {
     function(err, res) {
       // Let the user know the purchase was successful, re-run loadProducts
       console.log("\nSuccessfully purchased " + quantity + " " + product.product_name + "'s!");
+      console.log("\n");
       loadProducts();
     }
   );
@@ -133,7 +137,7 @@ function checkInventory(choiceId, inventory) {
 function checkIfShouldExit(choice) {
   if (choice.toLowerCase() === "q") {
     // Log a message and exit the current node process
-    console.log("Goodbye!");
+    console.log("Goodbye! Remember to enroll in Bamazon PRIDE for your next purchase!");
     process.exit(0);
   }
 }
